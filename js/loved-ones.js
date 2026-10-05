@@ -14,6 +14,9 @@ const FAMILY = [
   { name: "", message: "", src: "img/family-5.jpg" },
   { name: "", message: "", src: "img/family-6.jpg" },
   { name: "", message: "", src: "img/family-7.jpg" },
+  { name: "", message: "", src: "img/family-8.jpg" },
+  { name: "", message: "", src: "img/family-9.jpg" },
+  { name: "", message: "", src: "img/family-10.jpg" },
 ];
 
 const FRIENDS = [
