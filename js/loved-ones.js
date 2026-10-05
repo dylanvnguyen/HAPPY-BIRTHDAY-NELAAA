@@ -25,6 +25,7 @@ const FRIENDS = [
   { name: "", message: "", src: "img/friend-3.jpg" },
   { name: "", message: "", src: "img/friend-4.jpg" },
   { name: "", message: "", src: "img/friend-5.jpg" },
+  { name: "", message: "", src: "img/friend-6.jpg" },
 ];
 
 const LOVED_CAPTION = "";
