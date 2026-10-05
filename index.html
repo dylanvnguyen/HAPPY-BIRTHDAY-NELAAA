@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy 22nd Birthday!</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎀</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="floaties" id="floaties" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="logo" href="#top">🎀 <span class="her-name">Mahal</span>'s 22nd</a>
+    <nav>
+      <a href="#surprises">Surprises</a>
+      <a href="#cake">Cake</a>
+      <a href="#dance">Dance</a>
+      <a href="#loved-ones">Loved ones</a>
+      <a href="#letter">Letter</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO: the swaying parol -->
+    <section id="top" class="hero">
+      <button class="parol" id="parol" aria-label="Tap the parol for confetti"></button>
+      <p class="hint">Tap the parol ✨</p>
+      <h1 class="hero-title" id="hero-title">Happy 22nd birthday, Mahal!</h1>
+      <p class="hero-sub">Malipayong adlaw nga natawhan, palangga ko 💖</p>
+      <a class="btn" href="#surprises">Open your surprises</a>
+    </section>
+
+    <!-- CLICKABLE TREATS -->
+    <section id="surprises" class="section">
+      <h2>Tap a treat</h2>
+      <p class="section-sub">Every one of these hides a little memory of us.</p>
+      <div class="treats" id="treats"></div>
+    </section>
+
+    <!-- CAKE -->
+    <section id="cake" class="section">
+      <h2>Make a wish</h2>
+      <p class="section-sub">Tap the cake to blow out all 22 candles.</p>
+      <button class="cake" id="cake-btn" aria-label="Blow out the candles"></button>
+      <p class="wish" id="wish" aria-live="polite"></p>
+    </section>
+
+    <!-- DANCE FLOOR -->
+    <section id="dance" class="section">
+      <h2>Dance floor</h2>
+      <p class="section-sub">Tap the tiles to light them up, then pick a move. Or hit the big button for the full show.</p>
+      <button class="btn sc-btn" id="sc-btn">🎩 Smooth Criminal mode</button>
+      <div class="stage">
+        <div class="dancer" id="dancer" aria-hidden="true"></div>
+        <div class="floor" id="floor"></div>
+      </div>
+      <div class="moves">
+        <button class="btn btn-small" data-move="moonwalk">Moonwalk</button>
+        <button class="btn btn-small" data-move="spin">Spin</button>
+        <button class="btn btn-small" data-sc-move="lean">Lean</button>
+        <button class="btn btn-small" data-sc-move="kick">Kick</button>
+        <button class="btn btn-small" data-sc-move="toe">Toe stand</button>
+        <button class="btn btn-small" data-move="lights">Party lights</button>
+      </div>
+      <div class="tv" id="tv" hidden>
+        <div class="tv-screen"><div id="yt-player"></div></div>
+        <p class="tv-note" id="tv-note"></p>
+      </div>
+    </section>
+
+    <!-- LOVED ONES -->
+    <section id="loved-ones" class="section">
+      <h2>A message from the loved ones</h2>
+      <p class="section-sub">Everyone who loves you showed up to say happy birthday, Birthdaybun.</p>
+      <div class="loved-group">
+        <h3 class="loved-heading">Family</h3>
+        <div class="loved-grid" id="family-grid"></div>
+      </div>
+      <div class="loved-group">
+        <h3 class="loved-heading">Friends</h3>
+        <div class="loved-grid" id="friends-grid"></div>
+      </div>
+    </section>
+
+    <!-- LETTER -->
+    <section id="letter" class="section">
+      <h2>A note for you</h2>
+      <button class="envelope" id="envelope" aria-expanded="false" aria-controls="letter-body">
+        <span class="env-flap"></span>
+        <span class="env-heart">💌</span>
+        <span class="env-label">Open me</span>
+      </button>
+      <div class="letter-body" id="letter-body" hidden></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made with love by <span id="from-name">Dylan</span>. Palangga tika 💗</p>
+  </footer>
+
+  <!-- POPUP -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" data-close aria-label="Close">✕</button>
+      <div class="modal-icon" id="modal-icon"></div>
+      <h3 id="modal-title"></h3>
+      <p id="modal-message"></p>
+      <figure class="polaroid" id="polaroid">
+        <div class="photo-frame">
+          <img id="modal-img" alt="">
+          <video id="modal-video" controls playsinline preload="metadata"></video>
+          <div class="photo-missing" id="photo-missing"></div>
+        </div>
+        <figcaption id="modal-caption"></figcaption>
+      </figure>
+      <div class="gallery-nav" id="gallery-nav">
+        <button class="arrow" id="prev" aria-label="Previous photo">‹</button>
+        <span id="counter"></span>
+        <button class="arrow" id="next" aria-label="Next photo">›</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/updates.js"></script>
+  <script src="js/loved-ones.js"></script>
+  <script src="js/smooth-criminal.js"></script>
+  <script src="js/letter.js"></script>
+  <script src="js/gift.js"></script>
+</body>
+</html>
