@@ -6,7 +6,7 @@
    ✏️  START_AT: how many seconds into the video to start.
    ========================================================= */
 const VIDEO_ID = "h_D3VFfhvs4";
-const START_AT = 0;
+const START_AT = 170;
 
 /* ===== No need to edit below this line ===== */
 (function () {
